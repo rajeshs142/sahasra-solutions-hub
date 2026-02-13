@@ -10,7 +10,7 @@ import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
-  { icon: MapPin, label: "Address", value: "Andhra Pradesh, India" },
+  { icon: MapPin, label: "Address", value: "KLR Buildings, IIIrd Floor, B-Block, Gayatri Estates, Kurnool, Andhra Pradesh, India" },
   { icon: Phone, label: "Phone", value: "+91-97014-76968" },
   { icon: Mail, label: "Email", value: "contact@sahasratechnos.net" },
   { icon: Clock, label: "Working Hours", value: "Mon – Sat, 9:00 AM – 6:00 PM IST" },
