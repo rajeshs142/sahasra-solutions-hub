@@ -11,8 +11,8 @@ import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
   { icon: MapPin, label: "Address", value: "Andhra Pradesh, India" },
-  { icon: Phone, label: "Phone", value: "+91-XXXXX-XXXXX" },
-  { icon: Mail, label: "Email", value: "info@sahasratech.com" },
+  { icon: Phone, label: "Phone", value: "+91-97014-76968" },
+  { icon: Mail, label: "Email", value: "contact@sahasratechnos.net" },
   { icon: Clock, label: "Working Hours", value: "Mon – Sat, 9:00 AM – 6:00 PM IST" },
 ];
 
@@ -63,7 +63,7 @@ const Contact = () => {
               ))}
 
               {/* Map placeholder */}
-              <div className="mt-8 rounded-xl overflow-hidden border border-border aspect-video bg-muted flex items-center justify-center">
+              <div className="hidden mt-8 rounded-xl overflow-hidden border border-border aspect-video bg-muted flex items-center justify-center">
                 <iframe
                   title="Sahasra Technologies Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888888.888!2d79.0!3d15.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a5f15b5b5b5b5%3A0x1234567890abcdef!2sAndhra%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1234567890"
@@ -84,7 +84,7 @@ const Contact = () => {
               viewport={{ once: true }}
               className="lg:col-span-3"
             >
-              <div className="bg-card rounded-xl p-8 border border-border">
+              <div className="hidden bg-card rounded-xl p-8 border border-border">
                 <h3 className="font-display text-xl font-semibold text-foreground mb-6">Send an Enquiry</h3>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-4">
