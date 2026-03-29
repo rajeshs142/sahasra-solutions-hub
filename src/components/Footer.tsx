@@ -31,7 +31,7 @@ const Footer = () => (
           <ul className="space-y-3 text-sm text-primary-foreground/70">
             <li className="flex items-center gap-2"><MapPin size={16} className="text-accent shrink-0" />KLR Buildings, IIIrd Floor, B-Block, Gayatri Estates, Kurnool, Andhra Pradesh, India</li>
             <li className="flex items-center gap-2"><Phone size={16} className="text-accent shrink-0" /> +91-97014-76968</li>
-            <li className="flex items-center gap-2"><Mail size={16} className="text-accent shrink-0" /> contact@sahasratechnos.net</li>
+            <li className="flex items-center gap-2"><Mail size={16} className="text-accent shrink-0" /> info@sahasratechnos.net</li>
           </ul>
         </div>
       </div>
