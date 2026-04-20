@@ -3,15 +3,109 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
-import { Stethoscope, Receipt, ArrowRight, ShieldCheck, FileCheck } from "lucide-react";
+import { Stethoscope, Receipt, ArrowRight, ShieldCheck, FileCheck, Activity, TrendingUp, XCircle, UserCheck } from "lucide-react";
 
 const ServicesMedical = () => (
   <Layout>
+    {/* RCM Hero Section */}
+    <section className="py-20 bg-hero-gradient">
+      <div className="container mx-auto px-4 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl"
+        >
+          <span className="inline-flex items-center gap-2 bg-accent/20 text-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+            <Activity size={14} /> Revenue Cycle Management
+          </span>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
+            End-to-End RCM for{" "}
+            <span className="text-accent">Healthcare Providers</span>
+          </h1>
+          <p className="text-primary-foreground/70 text-lg mb-8 max-w-2xl leading-relaxed">
+            RCM is the financial backbone of healthcare — tracking every patient encounter from initial scheduling to final payment collection. We manage the entire cycle so you get paid faster with fewer denials.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { icon: TrendingUp, label: "Improved Cash Flow" },
+              { icon: XCircle, label: "Fewer Denials" },
+              { icon: UserCheck, label: "Better Patient Experience" },
+              { icon: ShieldCheck, label: "HIPAA Compliant" },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex flex-col items-center gap-2 bg-white/10 rounded-xl p-4 text-center">
+                <Icon size={22} className="text-accent" />
+                <span className="text-primary-foreground/80 text-xs font-medium leading-tight">{label}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* RCM Detail Section */}
+    <section className="py-20 bg-surface-warm">
+      <div className="container mx-auto px-4 lg:px-8">
+        <SectionHeading
+          label="How It Works"
+          title="Key Stages of the RCM Process"
+          description="We handle every step of the revenue cycle — so providers can focus on patients, not paperwork."
+        />
+
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            { step: "01", title: "Registration & Scheduling", desc: "Patient demographic and insurance data is collected, and insurance eligibility is verified upfront." },
+            { step: "02", title: "Charge Capture & Coding", desc: "Services are documented, coded using ICD-10/CPT, and converted into accurate billing claims." },
+            { step: "03", title: "Claims Submission", desc: "Clean claims are submitted promptly to insurance payers for timely reimbursement." },
+            { step: "04", title: "Remittance Processing", desc: "Payments are received, posted, and claims are reconciled against expected reimbursements." },
+            { step: "05", title: "Denial Management", desc: "Denied or rejected claims are reviewed, corrected, and resubmitted to recover revenue." },
+            { step: "06", title: "Patient Collections", desc: "Outstanding patient balances for services not covered by insurance are collected efficiently." },
+          ].map((stage, i) => (
+            <motion.div
+              key={stage.step}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="bg-card rounded-xl p-6 border border-border"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl font-display font-bold text-accent/40">{stage.step}</span>
+                <h4 className="font-display font-semibold text-foreground text-sm leading-tight">{stage.title}</h4>
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">{stage.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Stat callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-12 bg-accent/10 border border-accent/20 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6"
+        >
+          <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+            <Activity size={32} className="text-accent" />
+          </div>
+          <div>
+            <p className="font-display text-lg font-bold text-foreground mb-1">
+              11% of medical claims are denied industry-wide.
+            </p>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Our RCM specialists combine domain expertise with AI-driven analytics to improve coding accuracy, reduce denials, and accelerate collections — keeping your revenue cycle healthy.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+
     <section className="py-20 bg-surface-warm">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeading
           label="Medical Services"
-          title="Healthcare Back-Office Solutions"
+          title="Additional Healthcare Solutions"
           description="Specialized transcription and billing services designed for the healthcare industry, ensuring accuracy and HIPAA-grade confidentiality."
         />
       </div>

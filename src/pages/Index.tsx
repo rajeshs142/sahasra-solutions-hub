@@ -19,6 +19,7 @@ import {
   Target,
   Eye,
   ArrowRight,
+  Activity,
 } from "lucide-react";
 
 const services = [
@@ -27,6 +28,7 @@ const services = [
   { icon: ClipboardList, title: "Form Processing", description: "Efficient digital and physical form handling.", link: "/services/data" },
   { icon: Stethoscope, title: "Medical Transcription", description: "Precise medical documentation and transcription services.", link: "/services/medical" },
   { icon: Receipt, title: "Medical Billing", description: "Streamlined billing and coding for healthcare providers.", link: "/services/medical" },
+  { icon: Activity, title: "Revenue Cycle Management", description: "End-to-end RCM — from patient registration to final payment collection.", link: "/services/medical" },
   { icon: FileText, title: "Data Labelling", description: "Image, text and dataset labelling for advanced analytics.", link: "/services/specialized" },
 ];
 
@@ -56,24 +58,47 @@ const Index = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            className="max-w-3xl"
           >
-            <span className="inline-block bg-accent/20 text-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-              Back-Office Excellence
-            </span>
+            <div className="flex flex-wrap gap-3 mb-6">
+              <span className="inline-flex items-center gap-2 bg-accent/20 text-accent px-4 py-1.5 rounded-full text-sm font-semibold">
+                <Activity size={14} /> Healthcare RCM Specialists
+              </span>
+              <span className="inline-block bg-white/10 text-primary-foreground/80 px-4 py-1.5 rounded-full text-sm font-medium">
+                Back-Office Excellence
+              </span>
+            </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Streamline Your Operations,{" "}
-              <span className="text-gradient-accent">Amplify Your Growth</span>
+              Revenue Cycle Management{" "}
+              <span className="text-gradient-accent">&amp; Back-Office Solutions</span>
             </h1>
-            <p className="text-primary-foreground/70 text-lg mb-8 max-w-lg leading-relaxed">
-              Sahasra Technologies delivers reliable, accurate back-office solutions so you can focus on what matters most — your core business.
+            <p className="text-primary-foreground/70 text-lg mb-6 max-w-xl leading-relaxed">
+              From patient registration to final payment — Sahasra Technologies manages your entire healthcare revenue cycle, reducing denials and accelerating reimbursements.
             </p>
+            {/* RCM highlight pills */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap gap-3 mb-8"
+            >
+              {[
+                { icon: CheckCircle, label: "Reduce Claim Denials" },
+                { icon: Clock, label: "Faster Reimbursements" },
+                { icon: Shield, label: "HIPAA Compliant" },
+                { icon: Users, label: "ICD-10 / CPT Coding" },
+              ].map(({ icon: Icon, label }) => (
+                <span key={label} className="inline-flex items-center gap-1.5 bg-white/10 text-primary-foreground/90 px-3 py-1 rounded-full text-sm">
+                  <Icon size={13} className="text-accent" /> {label}
+                </span>
+              ))}
+            </motion.div>
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" size="lg" asChild>
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/services/medical">Explore RCM <ArrowRight size={18} /></Link>
               </Button>
               <Button variant="hero-outline" size="lg" asChild>
-                <Link to="/services/data">Our Services <ArrowRight size={18} /></Link>
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </motion.div>
@@ -102,7 +127,7 @@ const Index = () => {
           <SectionHeading
             label="Our Services"
             title="Comprehensive Back-Office Solutions"
-            description="From data entry to medical billing, we offer a full spectrum of services tailored to your business needs."
+            description="From data entry to Revenue Cycle Management, we offer a full spectrum of services tailored to your business needs."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, i) => (
